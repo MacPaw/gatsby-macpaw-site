@@ -49,7 +49,7 @@ const IndexPage = () => {
                 <img src={product.image} alt={product.name} />
               </div>
               <div className="products-name">{product.name}</div>
-              <div className="products-description">Очистка Mac</div>
+              <div className="products-description">{product.description}</div>
             </Link>
           )
         })}

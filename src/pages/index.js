@@ -29,7 +29,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Products" />
       <div className="center">
-        <div className="title">{intl.formatMessage({id: 'products.title'})}</div>
+        <div className="title">{intl.formatMessage({id: 'main.title'})}</div>
       </div>
       <div className="center">
         <Link to="/store" className="navigation">

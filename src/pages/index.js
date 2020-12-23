@@ -1,10 +1,12 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+import { useIntl, Link } from "gatsby-plugin-react-intl"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
+  const intl = useIntl();
   const { allProductsAJson } = useStaticQuery(
     graphql`
       query {
@@ -27,7 +29,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Products" />
       <div className="center">
-        <div className="title">Amazing Apps to Improve Your Every Day</div>
+        <div className="title">{intl.formatMessage({id: 'products.title'})}</div>
       </div>
       <div className="center">
         <Link to="/store" className="navigation">
@@ -38,7 +40,7 @@ const IndexPage = () => {
       <div className="products">
         {allProductsAJson.edges.map(item => {
           const product = item.node
-          console.log(product)
+
           return (
             <Link
               key={product.id}
